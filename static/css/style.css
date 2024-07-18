@@ -1,0 +1,145 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Hero image styles */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 33vh; /* One third of the viewport height */
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero-text h1 {
+    font-size: 3em;
+}
+
+.hero-text p {
+    font-size: 1.5em;
+}
+
+/* Navigation bar styles */
+.navbar {
+    background-color: transparent; /* Make the background transparent */
+    overflow: hidden;
+    position: absolute; /* Position it absolutely to overlap the hero section */
+    top: 0;
+    width: 100%;
+    z-index: 1; /* Ensure it stays on top of the hero image */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white; /* White text */
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darken on hover */
+    color: white;
+}
+
+/* Button styles */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Flash message styles */
+.flashes {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 20px 0; /* Adds margin around the list */
+}
+
+.flashes li {
+    margin-bottom: 10px; /* Adds space between messages */
+    padding: 15px; /* Adds padding inside each message */
+    border: 1px solid transparent; /* Base border */
+    border-radius: 4px; /* Rounds corners */
+    font-size: 16px; /* Sets font size */
+}
+
+/* Success message */
+.flashes li.success {
+    color: #3c763d; /* Text color */
+    background-color: #dff0d8; /* Background color */
+    border-color: #d6e9c6; /* Border color */
+}
+
+/* Error message */
+.flashes li.error {
+    color: #a94442; /* Text color */
+    background-color: #f2dede; /* Background color */
+    border-color: #ebccd1; /* Border color */
+}
+
+/* Warning message */
+.flashes li.warning {
+    color: #8a6d3b; /* Text color */
+    background-color: #fcf8e3; /* Background color */
+    border-color: #faebcc; /* Border color */
+}
+
+/* Info message */
+.flashes li.info {
+    color: #31708f; /* Text color */
+    background-color: #d9edf7; /* Background color */
+    border-color: #bce8f1; /* Border color */
+}
