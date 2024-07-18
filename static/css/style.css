@@ -42,7 +42,7 @@ body {
 
 /* Navigation bar styles */
 .navbar {
-    background-color: transparent; /* Make the background transparent */
+    background-color: black; /* Make the background transparent */
     overflow: hidden;
     position: absolute; /* Position it absolutely to overlap the hero section */
     top: 0;
@@ -142,4 +142,137 @@ footer {
     color: #31708f; /* Text color */
     background-color: #d9edf7; /* Background color */
     border-color: #bce8f1; /* Border color */
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* 3D Carousel Styles */
+
+.carousel-3d {
+  width: 100%;
+  height: 70vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  margin-top: 56px;
+  background: url('../img/pride-background.jpg') no-repeat center center/cover;
+}
+
+.carousel-3d .slider {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 10%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  --quantity: 10;
+  animation: autoRun 40s linear infinite;
+  z-index: 2;
+}
+
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+.carousel-3d .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(550px);
+}
+
+.carousel-3d .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-3d .content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, 100vw);
+  height: max-content;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.carousel-3d .content h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #222;
+  position: relative;
+  z-index: 3;
+}
+
+.carousel-3d .content h1 span {
+  display: block;
+}
+
+.carousel-3d .content .flag {
+  background-image: url(../img/flag.webp);
+  width: 100%;
+  height: 55vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-size: auto 130%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: 1;
 }
